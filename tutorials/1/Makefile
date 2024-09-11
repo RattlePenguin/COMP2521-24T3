@@ -11,13 +11,16 @@ CFLAGS2 = -Wall -Werror -g -fsanitize=memory,undefined -fsanitize-memory-track-o
 CFLAGS = $(CFLAGS1)
 
 .PHONY: all
-all: pointer swap
+all: pointer swap listSum
 
 pointer: pointer.c
 	$(CC) $(CFLAGS) -o pointer pointer.c
 
 swap: swap.c
 	$(CC) $(CFLAGS) -o swap swap.c
+
+listSum: listSum.c
+	$(CC) $(CFLAGS) -o listSum listSum.c
 
 .PHONY: clean
 clean:

@@ -19,12 +19,12 @@ int main(void) {
 	*pa = *pb;
 	*pb = c;
 
-	// printf("a = %d, b = %d\n", a, b);
+	// printf("a = %d, b = %d, c = %d\n", a, b, c);
 	
 	pa = pb;
 	*pa = 345;
 
-	// printf("a = %d, b = %d\n", a, b);
+	// printf("a = %d, b = %d, c = %d\n", a, b, c);
 	
 	return 0;
 }
