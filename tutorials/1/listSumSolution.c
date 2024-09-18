@@ -26,6 +26,12 @@ int main(int argc, char *argv[]) {
     printf("sumListWhile: %d\n", sumListWhile(curr));
     printf("sumListFor: %d\n", sumListFor(curr));
 
+    while (curr != NULL) {
+        struct node *temp = curr;
+        curr = curr->next;
+        free(temp);
+    }
+
     return 0;
 }
 
