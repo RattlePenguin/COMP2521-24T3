@@ -1,0 +1,16 @@
+visited[nV] = {false}
+pred[nV] = {-1}
+
+q = {}
+
+visited[0] = true
+q = {0}
+
+q = {}
+v = 0
+
+w = {1, 2, 5, 6, 7}
+visited[w] = true
+pred[w] = v
+
+q = {1, 2, 5, 6, 7}
