@@ -8,6 +8,11 @@ struct node {
     struct node *right;
 };
 
+bool isMinHeap(struct node *root);
+bool isMaxHeap(struct node *root);
+struct node *makeMinHeap();
+struct node *makeMaxHeap();
+
 int main(void) {
     struct node *minHeap = makeMinHeap();
     struct node *maxHeap = makeMaxHeap();
@@ -27,11 +32,35 @@ int main(void) {
 }
 
 bool isMinHeap(struct node *root) {
-    return false;
+    if (root == NULL) {
+        return true;
+    }
+
+    if (root->left != NULL && root->left->value < root->value) {
+        return false;
+    }
+
+    if (root->right != NULL && root->right->value < root->value) {
+        return false;
+    }
+
+    return isMinHeap(root->left) && isMinHeap(root->right);
 }
 
 bool isMaxHeap(struct node *root) {
-    return false;
+    if (root == NULL) {
+        return true;
+    }
+
+    if (root->left != NULL && root->left->value > root->value) {
+        return false;
+    }
+
+    if (root->right != NULL && root->right->value > root->value) {
+        return false;
+    }
+
+    return isMaxHeap(root->left) && isMaxHeap(root->right);
 }
 
 
