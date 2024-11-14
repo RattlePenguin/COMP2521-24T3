@@ -7,6 +7,4 @@
 
 int numWithin(Graph g, int src, int dist) {
 	// TODO
-	return 0;
 }
-
